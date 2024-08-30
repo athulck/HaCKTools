@@ -38,6 +38,22 @@ Usually, we don't have to do this. But, hey! If everything else fails, why not :
 ## Cryptography
 This often features ciphertexts, cryptographic algorithms (AES, RSA), or cryptographic systems (Diffie-Hellman) which involve several encryption and decryption protocols used to uncover hidden messages or vulnerabilities.
 
+
+## Steganography
+
+`zsteg`, `stegcracker`
+
+```
+steghide extract -sf <filename>
+```
+
+```
+binwalk <FILENAME>
+binwalk -e <FILENAME>  # to extract
+binwalk -dd ".*" <FILENAME>  # to force-extract
+```
+
+
 ## Binary exploitation
 This category often features compiled programs which have a vulnerability allowing a competitor to gain a command shell on the server running the vulnerable program. This often has the user exercising reverse engineering skills as well.
 
@@ -50,7 +66,7 @@ Exploiting a format string vulnerability to gain a command shell and read a file
 ## Reverse Engineering
 This category often features programs from all operating systems which must be reverse engineered to determine how the program operates. Typically the goal is to get the application to reach a certain point or perform some action in order to achieve a solution.
 
-`IDA Pro` and `Ghidra`.
+Ofcouse you can try `IDA Pro` or `Ghidra`. But you can also start with `strings`! :heart_eyes:
 
 ### ELF Reversing
 ### EXE Reversing
@@ -59,10 +75,21 @@ This category often features programs from all operating systems which must be r
 `apktool`
 
 ## Programming/Coding
-
+Showcase your supreme coding skills to solve challenges. The problem here will be either time-complexity, space-complexity or both. :sob:
 
 ## Forensics
 This category often features memory dumps, hidden files, or encrypted data which must be analyzed for information about underlying information.
+
+Start with identifying which file it is. [File signature](https://en.wikipedia.org/wiki/List_of_file_signatures) 101!
+```
+file <FILENAME> 
+```
+
+Converting ASCII hexdump output into binary files
+```
+xxd -r <ASCII-HEXDUMP> <OUTPUT-FILE>
+```
+
 
 ## Networking
 This mostly features packet captures (PCAPs) which must be analyzed for information about an underlying surface.
@@ -74,8 +101,15 @@ Wireshark FTW!
 ## Blockchain
 
 
+## Miscellaneous
+Recursively search the current directory (`.`) and all the files inside for the string "flag".
+```
+grep -Rnw . -e 'flag'
+```
 
-
+```
+find / -name "name_of_file" -type f 2>/dev/null
+```
 
 Set Target
 ```
@@ -152,12 +186,10 @@ telnet $TG
 
 
 ### HTTP (Port 80)
-
-
+Refer Web app exploitation
 
 
 ### Kerberos (Port 88)
-
 Kerberos is a key authentication service within Active Directory. 
 
 
@@ -167,7 +199,6 @@ Kerberos is a key authentication service within Active Directory.
 ```
 
 
-
 ### SMB (Ports 139/445)
 
 Check for **EternalBlue**
@@ -175,7 +206,6 @@ Check for **EternalBlue**
 `139/tcp open  netbios-ssn` (ms17-010) [CVE-2017-0143]
 
 > A critical remote code execution vulnerability exists in Microsoft SMBv1
-
 
 
 ```
