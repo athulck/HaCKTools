@@ -1,6 +1,82 @@
 
 
 
+## Web App Exploitation
+This probably has a custom developed web application which include some web security flaw which must be identified and exploited. The question is: Which security flaw?
+
+### Directory Enumeration
+
+Mandatory checks for `robots.txt` and `security.txt`.
+```
+curl http://$TG/robots.txt
+curl http://$TG/.well-known/security.txt
+```
+
+```
+gobuster dir -u $TG -w /usr/share/wordlists/wfuzz/general/common.txt
+gobuster dir -u $TG -x html,php,js -w /usr/share/wordlists/wfuzz/general/common.txt
+```
+
+#### Fuzzzzzzzz
+```
+ffuf -w /usr/share/wordlists/wfuzz/general/common.txt -u http://$TG/FUZZ
+```
+
+### XSS vulnerabilities
+Start with common XSS Payloads
+
+### SQL injection
+Start with common SQLi Payloads
+
+### Command injection
+Some PHP scripts allow command injection like `index.php?cmd=<COMMAND>`.
+
+### Server Enumeration
+Usually, we don't have to do this. But, hey! If everything else fails, why not :smirk:
+
+
+## Cryptography
+This often features ciphertexts, cryptographic algorithms (AES, RSA), or cryptographic systems (Diffie-Hellman) which involve several encryption and decryption protocols used to uncover hidden messages or vulnerabilities.
+
+## Binary exploitation
+This category often features compiled programs which have a vulnerability allowing a competitor to gain a command shell on the server running the vulnerable program. This often has the user exercising reverse engineering skills as well.
+
+### Buffer Overflow
+Exploiting a buffer overflow (which sometimes has some security mitigations in place) to gain a command shell and read a file.
+
+### Format String
+Exploiting a format string vulnerability to gain a command shell and read a file.
+
+## Reverse Engineering
+This category often features programs from all operating systems which must be reverse engineered to determine how the program operates. Typically the goal is to get the application to reach a certain point or perform some action in order to achieve a solution.
+
+`IDA Pro` and `Ghidra`.
+
+### ELF Reversing
+### EXE Reversing
+
+### Android APK Reversing
+`apktool`
+
+## Programming/Coding
+
+
+## Forensics
+This category often features memory dumps, hidden files, or encrypted data which must be analyzed for information about underlying information.
+
+## Networking
+This mostly features packet captures (PCAPs) which must be analyzed for information about an underlying surface.
+Wireshark FTW!
+
+## OSINT
+
+
+## Blockchain
+
+
+
+
+
 Set Target
 ```
 TG=192.168.XXX.XXX
@@ -77,23 +153,7 @@ telnet $TG
 
 ### HTTP (Port 80)
 
-Mandatory checks of `robots.txt` and `security.txt`
-```
-curl http://$TG/robots.txt
-curl $TG/.well-known/security.txt
-```
 
-
-#### Directory Enumeration
-
-```
-gobuster dir -u $TG -w /usr/share/wordlists/wfuzz/general/common.txt -t 10
-```
-
-#### Fuzzzzzzzz
-```
-ffuf -w /usr/share/wordlists/wfuzz/general/common.txt -u http://$TG/FUZZ
-```
 
 
 ### Kerberos (Port 88)
