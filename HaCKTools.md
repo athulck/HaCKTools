@@ -16,8 +16,8 @@ TG=192.168.XXX.XXX
 
 #### Nmap
 ```
-nmap -sS $TG -oN Nmap_init.txt
-nmap -sS -A $TG -oN Nmap_init.txt
+sudo nmap -sS $TG -vvv -oN Nmap_init.txt
+sudo nmap -sS -A $TG -vvv -oN Nmap_init.txt
 ```
 
 
