@@ -74,6 +74,8 @@ Ofcouse you can try `IDA Pro` or `Ghidra`. But you can also start with `strings`
 ### Android APK Reversing
 `apktool`
 
+[bytecode-viewer](https://github.com/Konloch/bytecode-viewer) : Android APK Reverse Engineering Suite
+
 ## Programming/Coding
 Showcase your supreme coding skills to solve challenges. The problem here will be either time-complexity, space-complexity or both. :sob:
 
