@@ -87,6 +87,12 @@ Start with identifying which file it is. [File signature](https://en.wikipedia.o
 file <FILENAME> 
 ```
 
+For memory dumps:
+Also check [this](https://noob-atbash.github.io/CTF-writeups/fword-20/forensic/memory) out for a refresher.
+```
+volatility -f <FILE>  --imageinfo
+```
+
 Converting ASCII hexdump output into binary files
 ```
 xxd -r <ASCII-HEXDUMP> <OUTPUT-FILE>
