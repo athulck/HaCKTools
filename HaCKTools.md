@@ -38,6 +38,7 @@ Usually, we don't have to do this. But, hey! If everything else fails, why not :
 ## Cryptography
 This often features ciphertexts, cryptographic algorithms (AES, RSA), or cryptographic systems (Diffie-Hellman) which involve several encryption and decryption protocols used to uncover hidden messages or vulnerabilities.
 
+Use [FactoDB](https://factordb.com/) and [Alpertron](https://www.alpertron.com.ar/ECM.HTM) for big integer factorization.
 
 ## Steganography
 
@@ -97,7 +98,7 @@ Converting ASCII hexdump output into binary files
 ```
 xxd -r <ASCII-HEXDUMP> <OUTPUT-FILE>
 ```
-
+Use 'exiftool' to extract EXIF information.
 
 ## Networking
 This mostly features packet captures (PCAPs) which must be analyzed for information about an underlying surface.
