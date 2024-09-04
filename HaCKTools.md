@@ -65,6 +65,13 @@ binwalk -dd ".*" <FILENAME>  # to force-extract
 ## Binary exploitation
 This category often features compiled programs which have a vulnerability allowing a competitor to gain a command shell on the server running the vulnerable program. This often has the user exercising reverse engineering skills as well.
 
+```
+xxd <FILENAME>
+hexdump <FILENAME>
+hexeditor <FILENAME>
+```
+
+
 ### Buffer Overflow
 Exploiting a buffer overflow (which sometimes has some security mitigations in place) to gain a command shell and read a file.
 
