@@ -139,6 +139,13 @@ Set Target
 TG=192.168.XXX.XXX
 ```
 
+Use [Responder](https://github.com/lgandx/Responder) tool which has built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. Great tool if you need a quick server to catch such connections and even poison them.
+
+```
+responder -I <INTERFACE>
+```
+
+
 ## 1. Information Gathering and Reconnaissance
 
 [DNS lookup](https://dnschecker.org/all-dns-records-of-domain.php) | [Abuse IPDB](https://www.abuseipdb.com/) | [Shodan](https://www.shodan.io/) | 
